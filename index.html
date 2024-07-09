@@ -5,7 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    body{
+        background-color: #6b9080;
+    }
+    .heading{
+        text-align: center;
+        font-size: 70px;
+        margin-top: 70px;
+    }
+    .textcontainer{
+        display: flex;
+        justify-content: space-around;
+
+    }
+    .inputbox{
+        width: 500px;
+        height: 200px;
+        margin-top: 70px;
+        font-size: 40px;
+        border: 5px solid black;
+        border-radius: 20px;
+        background-color: #cce3de;
+    }
+    .matchresult{
+        text-align: center;
+        font-size: 40px;
+    }
+</style>
 <body>
-    
+    <div class="app_container">
+        <h1 class="heading">String Comparator</h1>
+        <div class="textcontainer">
+            <input type="text" class="inputbox" id = "input1" onkeyup="compareText()">
+            <input type="text" class="inputbox" id = "input2" onkeyup="compareText()">
+        </div>
+        <p class="matchresult" id="matchresult">
+
+        </p>
+    </div>
+    <script>
+        function compareText(){
+            const input1ele=document.getElementById("input1")
+            const input2ele=document.getElementById("input2")
+
+            const result=document.getElementById("matchresult")
+            if(input1ele.value == input2ele.value)
+            {
+                result.innerText="Text Matched"
+            }
+            else{
+                result.innerText="Not Matched"
+            }
+        }
+    </script>
 </body>
 </html>
